@@ -15,6 +15,7 @@ Employee.init(
       validate: {
         isEmail: true,
       },
+    jobs: DataTypes.STRING,
     },
 
     role: {
