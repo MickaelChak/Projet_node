@@ -32,7 +32,7 @@ router.post(
 );
 
 // Get a specific task
-router.get("/tasks/:id", checkAuth(), async (req, res) => {
+router.get("/tâches/:id", checkAuth(), async (req, res) => {
   const tâches = await Tâches.findByPk(parseInt(req.params.id));
   if (tâches) {
     res.json(tâches);
