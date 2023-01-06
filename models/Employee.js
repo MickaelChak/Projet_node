@@ -17,12 +17,6 @@ Employee.init(
       },
     jobs: DataTypes.STRING,
     },
-
-    role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "Employee",
-    },
   },
   {
     sequelize: connection,
