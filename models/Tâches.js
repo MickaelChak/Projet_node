@@ -34,4 +34,4 @@ Tâches.init(
   }
 );
 
-module.exports = Task;
+module.exports = Tâches;
