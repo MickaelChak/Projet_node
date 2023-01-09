@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require("sequelize");
 const connection = require("./db");
 
-class Tâches extends Model {}
+class Task extends Model {}
 
-Tâches.init(
+Task.init(
   {
     //nom de la tâche
-    nom: { 
+    name: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -14,10 +14,10 @@ Tâches.init(
     //description de la tâche
     description: DataTypes.TEXT,
 
-    //status de la tâche (à faire, en progression, fait)
+    //status de la tâche (To Do, In progress, Done)
     status: {
       type: DataTypes.STRING,
-      defaultValue: "à faire",
+      defaultValue: "To Do",
     },
 
     //date de rendu 
@@ -34,4 +34,4 @@ Tâches.init(
   }
 );
 
-module.exports = Tâches;
+module.exports = Task;
