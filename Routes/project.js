@@ -1,6 +1,6 @@
 //lea
 const { Router } = require("express");
-const { Project } = require("../../models");
+const { Project } = require("../models");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
