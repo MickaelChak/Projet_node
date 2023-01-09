@@ -2,14 +2,25 @@ POST http://localhost:3000/login
 
 //User
 GET http://localhost:3000/users
+//Authorization: Bearer token
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
+{
+  "lastname": "Chaksoukane",
+  "firstname": "Mickael",
+  "email": "mickael@test.com",
+  "password": "test"
+}
 ### 
 GET http://localhost:3000/users/1
 ###
 PUT http://localhost:3000/users/1
 Content-Type: application/json
+//Authorization: Bearer token
+{
+  "role": "ADMIN"
+}
 ### 
 DELETE http://localhost:3000/users/1
 
