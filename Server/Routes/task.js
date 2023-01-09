@@ -1,30 +1,30 @@
 const { Router } = require("express");
-const { Tâches } = require("../../models");
+const { Task } = require("../../models");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
 
 // Get collection of tasks
 router.get(
-  "/tâches",
+  "/task",
   checkAuth(),
   async (req, res) => {
-    const tâches = await Tâches.findAll({
+    const task = await Task.findAll({
       where: req.query,
     });
-    res.json(tâches);
+    res.json(task);
   }
 );
 
 // Create a new task
 router.post(
-  "/tâches",
+  "/task",
   checkAuth(),
   async (req, res, next) => {
     try {
-      const tâches = new Tâches(req.body);
-      await tâches.save();
-      res.status(201).json(tâches);
+      const task = new Task(req.body);
+      await task.save();
+      res.status(201).json(task);
     } catch (error) {
       next(error);
     }
@@ -32,10 +32,10 @@ router.post(
 );
 
 // Get a specific task
-router.get("/tâches/:id", checkAuth(), async (req, res) => {
-  const tâches = await Tâches.findByPk(parseInt(req.params.id));
-  if (tâches) {
-    res.json(tâches);
+router.get("/task/:id", checkAuth(), async (req, res) => {
+  const task = await Task.findByPk(parseInt(req.params.id));
+  if (task) {
+    res.json(task);
   } else {
     res.sendStatus(404);
   }
@@ -43,12 +43,12 @@ router.get("/tâches/:id", checkAuth(), async (req, res) => {
 
 // Update a specific task
 router.put(
-  "/tâches/:id",
+  "/task/:id",
   checkAuth(),
   async (req, res, next) => {
     try {
       const id = parseInt(req.params.id);
-      const [nbUpdated] = await Tâches.update(req.body, {
+      const [nbUpdated] = await Task.update(req.body, {
         where: {
           id,
         },
@@ -57,7 +57,7 @@ router.put(
       if (!nbUpdated) {
         res.sendStatus(404);
       } else {
-        res.json(await Tâches.findByPk(id));
+        res.json(await Task.findByPk(id));
       }
     } catch (error) {
       next(error);
@@ -66,8 +66,8 @@ router.put(
 );
 
 // DELETE a specific task
-router.delete("/tâches/:id", checkAuth(), async (req, res) => {
-  const nbDeleted = await Tâches.destroy({
+router.delete("/task/:id", checkAuth(), async (req, res) => {
+  const nbDeleted = await Task.destroy({
     where: {
       id: parseInt(req.params.id),
     },
