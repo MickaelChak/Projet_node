@@ -1,9 +1,9 @@
 const express = require("express");
-const checkRequestFormat = require("./Server/middlewares/checkRequestFormat");
-const userRouter = require("./Server/Routes/users");
-const employeeRouter = require("./Server/Routes/employee");
-const taskRouter = require("./Server/Routes/task");
-const projectRouter = require("./Server/Routes/project");
+const checkRequestFormat = require("./middlewares/checkRequestFormat");
+const userRouter = require("./Routes/users");
+const employeeRouter = require("./Routes/employee");
+const taskRouter = require("./Routes/task");
+const projectRouter = require("./Routes/project");
 require("./models/db");
 
 const app = express();
