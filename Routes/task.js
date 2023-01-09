@@ -1,6 +1,6 @@
 //Mickael
 const { Router } = require("express");
-const { Task } = require("../../models");
+const { Task } = require("../models");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
