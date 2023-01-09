@@ -1,0 +1,58 @@
+
+//User
+GET http://localhost:3000/users
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+### 
+GET http://localhost:3000/users/1
+###
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+### 
+DELETE http://localhost:3000/users/1
+
+
+
+
+//Employee
+GET http://localhost:3000/employee
+###
+POST http://localhost:3000/employee
+Content-Type: application/json
+### 
+GET http://localhost:3000/employee/1
+###
+PUT http://localhost:3000/employee/1
+Content-Type: application/json
+### 
+DELETE http://localhost:3000/employee/1
+ 
+//Task
+GET http://localhost:3000/task
+###
+POST http://localhost:3000/task
+Content-Type: application/json
+### 
+GET http://localhost:3000/task/1
+###
+PUT http://localhost:3000/task/1
+Content-Type: application/json
+### 
+DELETE http://localhost:3000/task/1
+
+
+
+//Project
+GET http://localhost:3000/project
+###
+POST http://localhost:3000/project
+Content-Type: application/json
+### 
+GET http://localhost:3000/project/1
+###
+PUT http://localhost:3000/project/1
+Content-Type: application/json
+### 
+DELETE http://localhost:3000/project/1
+
