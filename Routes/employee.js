@@ -1,6 +1,6 @@
 //Lea
 const { Router } = require("express");
-const { Employee } = require("../../models");
+const { Employee } = require("../models");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
