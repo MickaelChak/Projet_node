@@ -28,6 +28,11 @@ User.init(
       allowNull: false,
       defaultValue: "USER",
     },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+    },
   },
   {
     sequelize: connection,
