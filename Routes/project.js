@@ -1,31 +1,32 @@
 //lea
 const { Router } = require("express");
-const { Project } = require("../models");
+const Project  = require("../models/Project");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
 
-// Get collection project
+// Get collection projects
 router.get(
-  "/project",
+  "/projects",
   checkAuth(),
+  checkRole(checkRole.ROLES.ADMIN),
   async (req, res) => {
-    const project = await Project.findAll({
+    const projects = await Project.findAll({
       where: req.query,
     });
-    res.json(project);
+    res.json(projects);
   }
 );
 
 // Create a new Project
 router.post(
-  "/project",
-  checkAuth(),
+  "/projects",
+  checkAuth({ anonymous: true }),
   async (req, res, next) => {
     try {
-      const Project = new Project(req.body);
-      await Project.save();
-      res.status(201).json(Project);
+      const project = new Project(req.body);
+      await project.save();
+      res.status(201).json(project);
     } catch (error) {
       next(error);
     }
@@ -33,10 +34,10 @@ router.post(
 );
 
 // Get a specific Project
-router.get("/project/:id", checkAuth(), async (req, res) => {
-  const Project = await Project.findByPk(parseInt(req.params.id));
-  if (Project) {
-    res.json(Project);
+router.get("/projects/:id", checkAuth(), async (req, res) => {
+  const project = await Project.findByPk(parseInt(req.params.id));
+  if (project) {
+    res.json(project);
   } else {
     res.sendStatus(404);
   }
@@ -44,7 +45,7 @@ router.get("/project/:id", checkAuth(), async (req, res) => {
 
 // Update a specific Project
 router.put(
-  "/project/:id",
+  "/projects/:id",
   checkAuth(),
   async (req, res, next) => {
     try {
@@ -69,7 +70,7 @@ router.put(
 );
 
 // DELETE a specific Project
-router.delete("/project/:id", checkAuth(), async (req, res) => {
+router.delete("/projects/:id", checkAuth(), async (req, res) => {
   const id = parseInt(req.params.id);
   const nbDeleted = await Project.destroy({
     where: {
