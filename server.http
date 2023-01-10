@@ -9,45 +9,48 @@ Content-type: application/json
 //Users
 ###
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMzNTc4OTZ9.QYfXyxNHOVR36SOx7npwGFuH1IukH5KlRraSZvmcy2I
 
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "lastname": "Chaksoukane",
-  "firstname": "Mickael",
-  "email": "mickael@test.com",
-  "password": "test"
+  "id": 2,
+  "lastname": "Troquereau",
+  "firstname": "léa",
+  "email": "léa@test.com",
+  "password": "1234"
+  
 }
 ### 
 GET http://localhost:3000/users/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6bnVsbCwiZmlyc3RuYW1lIjpudWxsLCJyb2xlIjoiVVNFUiIsImlkIjoxLCJpYXQiOjE2NzMyNzc1ODR9.O9To_IxzCBcplKzOjGEEm92vxFCOnhHcj3aIGMjCkQY
-###
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
+###
 PUT http://localhost:3000/users/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
-    
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMzNjMwMzN9.TtzKJf7HTRnTGTS2MpJ7ZpGhyjY-SsNOkuaUkMBlKoY
+
 {
   "role": "ADMIN"
 }
-### 
-DELETE http://localhost:3000/users/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
 
+### 
+DELETE http://localhost:3000/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 //Employees
 ###
 GET http://localhost:3000/employees
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMzNTc4OTZ9.QYfXyxNHOVR36SOx7npwGFuH1IukH5KlRraSZvmcy2I
 
 ###
 POST http://localhost:3000/employees
 Content-Type: application/json
 
 {
+  "id": 1,
   "lastname": "Chaksoukane",
   "firstname": "Mickael",
   "email": "mickael@test.com",
@@ -56,33 +59,34 @@ Content-Type: application/json
  
 ### 
 GET http://localhost:3000/employees/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 ###
 PUT http://localhost:3000/employees/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 {
-  "email": "mickael@test.com"
+  "email": "mickael1@test.com"
 }
 
 ### 
 DELETE http://localhost:3000/employees/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 
 //projects
 ###
 GET http://localhost:3000/projects
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMzNTc4OTZ9.QYfXyxNHOVR36SOx7npwGFuH1IukH5KlRraSZvmcy2I
 
 ###
 POST http://localhost:3000/projects
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 {
+  "id": 1,
   "nameProject": "Node",
   "name": "Mickael",
   "status": "In progress",
@@ -92,12 +96,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoY
  
 ### 
 GET http://localhost:3000/projects/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 ###
 PUT http://localhost:3000/projects/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 {
   "status": "Completed"
@@ -105,20 +109,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoY
 
 ### 
 DELETE http://localhost:3000/projects/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 //Tasks
 ###
 GET http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 ###
 POST http://localhost:3000/tasks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 {
+  "id": 1,
   "name": "Entity Project",
   "status": "To DO",
   "dueDate": "2023-01-05"
@@ -126,12 +130,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoY
  
 ### 
 GET http://localhost:3000/tasks/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 ###
 PUT http://localhost:3000/tasks/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
 
 {
   "status": "In progress"
@@ -139,6 +143,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoY
 
 ### 
 DELETE http://localhost:3000/tasks/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJVU0VSIiwiaWQiOjEsImlhdCI6MTY3MzM1NzY2NX0.R2b2n-96L5L8jTEnQ4GLl4i1siszQXqDOIn9CH2x-iE
+
 
 
