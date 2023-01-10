@@ -1,11 +1,20 @@
-POST http://localhost:3000/login
+POST http://localhost:3000/login 
+Content-type: application/json
 
-//User
+{
+  "email": "mickael@test.com",
+  "password": "test"
+}
+
+//Users
+###
 GET http://localhost:3000/users
-//Authorization: Bearer token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
+
 {
   "lastname": "Chaksoukane",
   "firstname": "Mickael",
@@ -13,60 +22,123 @@ Content-Type: application/json
   "password": "test"
 }
 ### 
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6bnVsbCwiZmlyc3RuYW1lIjpudWxsLCJyb2xlIjoiVVNFUiIsImlkIjoxLCJpYXQiOjE2NzMyNzc1ODR9.O9To_IxzCBcplKzOjGEEm92vxFCOnhHcj3aIGMjCkQY
 ###
-PUT http://localhost:3000/users/1
+
+PUT http://localhost:3000/users/2
 Content-Type: application/json
-//Authorization: Bearer token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+    
 {
   "role": "ADMIN"
 }
 ### 
 DELETE http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
 
 
-
-
-//Employee
-GET http://localhost:3000/employee
+//Employees
 ###
-POST http://localhost:3000/employee
+GET http://localhost:3000/employees
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+###
+POST http://localhost:3000/employees
 Content-Type: application/json
+
 {
+  "lastname": "Chaksoukane",
+  "firstname": "Mickael",
+  "email": "mickael@test.com",
+  "jobs": "computer engineer"
+}
  
 ### 
-GET http://localhost:3000/employee/1
+GET http://localhost:3000/employees/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
 ###
-PUT http://localhost:3000/employee/1
+PUT http://localhost:3000/employees/1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+{
+  "email": "mickael@test.com"
+}
+
 ### 
-DELETE http://localhost:3000/employee/1
+DELETE http://localhost:3000/employees/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+
+//projects
+###
+GET http://localhost:3000/projects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+###
+POST http://localhost:3000/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+{
+  "nameProject": "Node",
+  "name": "Mickael",
+  "status": "In progress",
+  "startDate": "2022-12-18",
+  "dueDate": "2023-01-10"
+}
  
-//Task
-GET http://localhost:3000/task
-###
-POST http://localhost:3000/task
-Content-Type: application/json
 ### 
-GET http://localhost:3000/task/1
+GET http://localhost:3000/projects/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
 ###
-PUT http://localhost:3000/task/1
+PUT http://localhost:3000/projects/1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+{
+  "status": "Completed"
+}
+
 ### 
-DELETE http://localhost:3000/task/1
+DELETE http://localhost:3000/projects/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
 
 
+//Tasks
+###
+GET http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
 
-//Project
-GET http://localhost:3000/project
 ###
-POST http://localhost:3000/project
+POST http://localhost:3000/tasks
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+{
+  "name": "Entity Project",
+  "status": "To DO",
+  "dueDate": "2023-01-05"
+}
+ 
 ### 
-GET http://localhost:3000/project/1
+GET http://localhost:3000/tasks/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
 ###
-PUT http://localhost:3000/project/1
+PUT http://localhost:3000/tasks/1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
+{
+  "status": "In progress"
+}
+
 ### 
-DELETE http://localhost:3000/project/1
+DELETE http://localhost:3000/tasks/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0bmFtZSI6IkNoYWtzb3VrYW5lIiwiZmlyc3RuYW1lIjoiTWlja2FlbCIsInJvbGUiOiJBRE1JTiIsImlkIjoxLCJpYXQiOjE2NzMyOTM3NDh9.exKMfLV48wrlMEW3PW59-8xUYhy0oOtkX8JYemgOFwg
+
 
