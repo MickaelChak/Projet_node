@@ -33,6 +33,12 @@ Project.init(
     //project end date
     dueDate: DataTypes.DATE,
 
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+    },
+
   },
   {
     sequelize: connection,
@@ -40,5 +46,7 @@ Project.init(
 );
 
 module.exports = Project;
+
+
 
 
