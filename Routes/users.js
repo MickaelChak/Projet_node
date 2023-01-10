@@ -5,13 +5,13 @@ const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
 
+
 // Get collection users
 router.get(
   "/users",
   checkAuth(),
-  checkRole(checkRole.ROLES.ADMIN),
   async (req, res) => {
-    const users = await User.findAll({
+     const users = await User.findAll({
       where: req.query,
       attributes: { exclude: ["password"] },
     });
@@ -61,9 +61,6 @@ router.put(
   async (req, res, next) => {
     try {
       const id = parseInt(req.params.id);
-      if (req.user.id !== id) {
-        return res.sendStatus(403);
-      }
       const [nbUpdated] = await User.update(req.body, {
         where: {
           id,
@@ -84,7 +81,12 @@ router.put(
 );
 
 // DELETE a specific user
-router.delete("/users/:id", checkAuth(), async (req, res) => {
+router.delete("/users/:id",
+ checkAuth(),
+ checkRole(checkRole.ROLES.ADMIN, {
+  securedFields: ["role"],
+ }),
+ async (req, res) => {
   const id = parseInt(req.params.id);
   const nbDeleted = await User.destroy({
     where: {
@@ -95,3 +97,5 @@ router.delete("/users/:id", checkAuth(), async (req, res) => {
 });
 
 module.exports = router;
+
+
