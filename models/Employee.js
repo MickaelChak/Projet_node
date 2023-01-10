@@ -15,7 +15,13 @@ Employee.init(
       validate: {
         isEmail: true,
       },
+    },
     jobs: DataTypes.STRING,
+    
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
     },
   },
   {
@@ -24,5 +30,7 @@ Employee.init(
 );
 
 module.exports = Employee;
+
+
 
 
