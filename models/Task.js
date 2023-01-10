@@ -24,6 +24,12 @@ Task.init(
     //due date
     dueDate: DataTypes.DATE,
 
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+    },
+
   },
   {
     sequelize: connection,
