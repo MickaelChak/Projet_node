@@ -1,9 +1,11 @@
 const express = require("express");
 const checkRequestFormat = require("./middlewares/checkRequestFormat");
-const userRouter = require("./Routes/users");
-const employeeRouter = require("./Routes/employee");
-const taskRouter = require("./Routes/task");
-const projectRouter = require("./Routes/project");
+const errorHandler = require("./middlewares/errorHandler");
+const userRouter = require("./routes/users");
+const employeeRouter = require("./routes/employees");
+const projectRouter = require("./routes/projects");
+const taskRouter = require("./routes/tasks");
+const securityRouter = require("./routes/security");
 require("./models/db");
 
 const app = express();
@@ -11,12 +13,16 @@ const app = express();
 app.use(checkRequestFormat);
 app.use(express.json());
 
+app.use(securityRouter);
 app.use(userRouter);
 app.use(employeeRouter);
-app.use(taskRouter);
 app.use(projectRouter);
+app.use(taskRouter);
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server is listening on port " + PORT);
 });
+
