@@ -1,42 +1,44 @@
 //Lea
 const { Router } = require("express");
-const { Employee } = require("../models");
+const  Employee  = require("../models/Employee");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
 
-// Get collection employee
+// Get collection employees
 router.get(
-  "/employee",
+  "/employees",
   checkAuth(),
+  checkRole(checkRole.ROLES.ADMIN),
   async (req, res) => {
-    const employee = await Employee.findAll({
+    const employees = await Employee.findAll({
       where: req.query,
     });
-    res.json(employee);
+    res.json(employees);
   }
 );
 
 // Create a new Employee
 router.post(
-  "/employee",
-  checkAuth(),
+  "/employees",
+  checkAuth({ anonymous: true }),
   async (req, res, next) => {
     try {
-      const Employee = new Employee(req.body);
-      await Employee.save();
-      res.status(201).json(Employee);
+      const employees = new Employee(req.body);
+      await employees.save();
+      res.status(201).json(employees);
     } catch (error) {
+      console.log("Here");
       next(error);
     }
   }
 );
 
 // Get a specific Employee
-router.get("/employee/:id", checkAuth(), async (req, res) => {
-  const Employee = await Employee.findByPk(parseInt(req.params.id));
-  if (Employee) {
-    res.json(Employee);
+router.get("/employees/:id", checkAuth(), async (req, res) => {
+  const employee = await Employee.findByPk(parseInt(req.params.id));
+  if (employee) {
+    res.json(employee);
   } else {
     res.sendStatus(404);
   }
@@ -44,7 +46,7 @@ router.get("/employee/:id", checkAuth(), async (req, res) => {
 
 // Update a specific Employee
 router.put(
-  "/employee/:id",
+  "/employees/:id",
   checkAuth(),
   async (req, res, next) => {
     try {
@@ -69,7 +71,7 @@ router.put(
 );
 
 // DELETE a specific Employee
-router.delete("/employee/:id", checkAuth(), async (req, res) => {
+router.delete("/employees/:id", checkAuth(), async (req, res) => {
   const id = parseInt(req.params.id);
   const nbDeleted = await Employee.destroy({
     where: {
@@ -80,3 +82,4 @@ router.delete("/employee/:id", checkAuth(), async (req, res) => {
 });
 
 module.exports = router;
+
