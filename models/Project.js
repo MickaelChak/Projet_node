@@ -21,10 +21,10 @@ Project.init(
     //project description
     description: DataTypes.TEXT,
 
-    //Project status (To Do, in progress, completed)
+    //Project status (In progress, Completed)
     status: {
       type: DataTypes.STRING,
-      defaultValue: "To Do",
+      defaultValue: "To do",
     },
 
      //project start date
@@ -33,11 +33,6 @@ Project.init(
     //project end date
     dueDate: DataTypes.DATE,
 
-    //Project ID
-    Id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
   },
   {
     sequelize: connection,
@@ -45,3 +40,5 @@ Project.init(
 );
 
 module.exports = Project;
+
+
