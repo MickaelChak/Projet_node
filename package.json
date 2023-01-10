@@ -7,7 +7,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "migrate": "node migrate.js"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -20,5 +19,7 @@
     "sequelize": "^6.28.0"
   }
 }
+
+
 
 
