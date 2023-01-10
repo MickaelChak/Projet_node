@@ -1,50 +1,50 @@
 //Mickael
 const { Router } = require("express");
-const { Task } = require("../models");
+const Task  = require("../models/Task");
 const checkAuth = require("../middlewares/checkAuth");
 const checkRole = require("../middlewares/checkRole");
 const router = new Router();
 
 // Get collection of tasks
 router.get(
-  "/task",
+  "/tasks",
   checkAuth(),
   async (req, res) => {
-    const task = await Task.findAll({
+    const tasks = await Task.findAll({
       where: req.query,
     });
-    res.json(task);
+    res.json(tasks);
   }
 );
 
-// Create a new task
+// Create a new tasks
 router.post(
-  "/task",
+  "/tasks",
   checkAuth(),
   async (req, res, next) => {
     try {
-      const task = new Task(req.body);
-      await task.save();
-      res.status(201).json(task);
+      const tasks = new Task(req.body);
+      await tasks.save();
+      res.status(201).json(tasks);
     } catch (error) {
       next(error);
     }
   }
 );
 
-// Get a specific task
-router.get("/task/:id", checkAuth(), async (req, res) => {
-  const task = await Task.findByPk(parseInt(req.params.id));
-  if (task) {
-    res.json(task);
+// Get a specific tasks
+router.get("/tasks/:id", checkAuth(), async (req, res) => {
+  const tasks = await Task.findByPk(parseInt(req.params.id));
+  if (tasks) {
+    res.json(tasks);
   } else {
     res.sendStatus(404);
   }
 });
 
-// Update a specific task
+// Update a specific tasks
 router.put(
-  "/task/:id",
+  "/tasks/:id",
   checkAuth(),
   async (req, res, next) => {
     try {
@@ -58,7 +58,9 @@ router.put(
       if (!nbUpdated) {
         res.sendStatus(404);
       } else {
-        res.json(await Task.findByPk(id));
+        res.json(
+          await Task.findByPk(id)
+          );
       }
     } catch (error) {
       next(error);
@@ -66,8 +68,8 @@ router.put(
   }
 );
 
-// DELETE a specific task
-router.delete("/task/:id", checkAuth(), async (req, res) => {
+// DELETE a specific tasks
+router.delete("/tasks/:id", checkAuth(), async (req, res) => {
   const nbDeleted = await Task.destroy({
     where: {
       id: parseInt(req.params.id),
