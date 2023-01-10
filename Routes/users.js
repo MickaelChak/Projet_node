@@ -1,3 +1,4 @@
+
 const { Router } = require("express");
 const { User } = require("../models");
 const checkAuth = require("../middlewares/checkAuth");
@@ -85,9 +86,6 @@ router.put(
 // DELETE a specific user
 router.delete("/users/:id", checkAuth(), async (req, res) => {
   const id = parseInt(req.params.id);
-  if (req.user.id !== id) {
-    return res.sendStatus(403);
-  }
   const nbDeleted = await User.destroy({
     where: {
       id,
