@@ -15,7 +15,7 @@ Task.init(
     //task description
     description: DataTypes.TEXT,
 
-    //task status (To Do, In progress, Done)
+    //task status (To Do, In progress, Completed)
     status: {
       type: DataTypes.STRING,
       defaultValue: "To do",
@@ -31,5 +31,7 @@ Task.init(
 );
 
 module.exports = Task;
+
+
 
 
