@@ -21,7 +21,7 @@ Project.init(
     //project description
     description: DataTypes.TEXT,
 
-    //Project status (In progress, Completed)
+    //Project status (To do, In progress, Completed)
     status: {
       type: DataTypes.STRING,
       defaultValue: "To do",
