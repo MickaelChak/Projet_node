@@ -6,29 +6,24 @@ class Task extends Model {}
 
 Task.init(
   {
-    //nom de la tâche
+    //name of the task
     name: { 
       type: DataTypes.STRING,
       allowNull: false,
     },
     
-    //description de la tâche
+    //task description
     description: DataTypes.TEXT,
 
-    //status de la tâche (To Do, In progress, Done)
+    //task status (To Do, In progress, Done)
     status: {
       type: DataTypes.STRING,
-      defaultValue: "To Do",
+      defaultValue: "To do",
     },
 
-    //date de rendu 
+    //due date
     dueDate: DataTypes.DATE,
 
-    //Id de la tâche 
-    Id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
   },
   {
     sequelize: connection,
@@ -36,3 +31,5 @@ Task.init(
 );
 
 module.exports = Task;
+
+
